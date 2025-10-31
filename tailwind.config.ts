@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -30,6 +31,14 @@ export default {
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
@@ -46,6 +55,10 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        scanner: {
+          overlay: "hsl(var(--scanner-overlay))",
+          glow: "hsl(var(--scanner-glow))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -80,10 +93,47 @@ export default {
             height: "0",
           },
         },
+        "scan-pulse": {
+          "0%, 100%": {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+          "50%": {
+            opacity: "0.8",
+            transform: "scale(1.05)",
+          },
+        },
+        "scan-line": {
+          "0%": {
+            top: "0%",
+          },
+          "100%": {
+            top: "100%",
+          },
+        },
+        "glow": {
+          "0%, 100%": {
+            boxShadow: "0 0 20px hsl(var(--primary) / 0.3)",
+          },
+          "50%": {
+            boxShadow: "0 0 40px hsl(var(--primary) / 0.6)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "scan-pulse": "scan-pulse 2s ease-in-out infinite",
+        "scan-line": "scan-line 2s linear infinite",
+        "glow": "glow 2s ease-in-out infinite",
+      },
+      backgroundImage: {
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-scan": "var(--gradient-scan)",
+      },
+      boxShadow: {
+        glow: "var(--shadow-glow)",
+        scanner: "var(--shadow-scanner)",
       },
     },
   },
